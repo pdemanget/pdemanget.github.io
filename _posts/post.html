@@ -1,0 +1,29 @@
+<html><head><title>Post</title>
+<script src="markdown.js"></script>
+
+</head><body>
+    <div id="preview"> </div>
+<script>
+loadAjax= function(url) {
+	xhr = new XMLHttpRequest();
+
+	try {
+		xhr.open('GET', url, false);
+		xhr.send(null);
+	} catch (e) {
+		isCrossOriginRestricted = true;
+	}
+
+	status = (xhr.status === 1223) ? 204 :(xhr.status === 0 && (self.location || {}).protocol == 'file:') ? 200 : xhr.status;
+
+	if ((status >= 200 && status < 300) || (status === 304) || (status === ''))
+		return xhr.responseText;
+	return null;
+};
+
+
+  preview.innerHTML = markdown.toHTML(loadAjax("post.md"));
+</script>
+
+
+</body></html>
