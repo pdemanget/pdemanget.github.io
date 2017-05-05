@@ -1,52 +1,36 @@
----
-layout: default
-title: Blog
----
-<!--
-<div class="container">-->
-  <ul class="post">
-  {% for post in paginator.posts %}
-    <li class="post__container">
-        <h1><a href="{{ post.url | prepend: site.baseurl/ }}">{{ post.title }}</a></h1>
-        <div>
-          <span class="post__meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        </div>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ma page github</title>
+</head>
 
-        {{post.excerpt}}
-          <a href="{{ post.url | prepend: site.baseurl }}" class="read-more">Read More</a>
-    </li>
-  {% endfor %}
+<link rel="stylesheet" href="https://unpkg.com/purecss@0.6.2/build/pure-min.css" integrity="sha384-UQiGfs9ICog+LwheBSRCt1o5cbyKIHbwjWscjemyBMT9YCUMZffs6UqUTd0hObXD" crossorigin="anonymous">
+<style>
+.custom-restricted-width {
+    /* To limit the menu width to the content of the menu: */
+    display: inline-block;
+    /* Or set the width explicitly: */
+    /* width: 10em; */
+}
+</style>
 
-  </ul>
-<!--</div>  wrapper-end -->
+<body>
 
+<div class="pure-menu custom-restricted-width">
+    <span class="pure-menu-heading">github.com/pdemanget</span>
 
-  <!-- Pagination -->
-      {% if paginator.total_pages > 1 %}
-      <div class="pagination text-center">
-      {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-      {% else %}
-      <span>&laquo; Prev</span>
-      {% endif %}
+    <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Blog</a></li>
+        <li class="pure-menu-item"><a href="http://www.github.com/pdemanget" class="pure-menu-link">Projets</a></li>
+        <li class="pure-menu-item"><a href="http://gist.github.com/pdemanget" class="pure-menu-link">Gist</a></li>
 
-      {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-      <em>{{ page }}</em>
-      {% elsif page == 1 %}
-      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-      {% else %}
-      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-      {% endif %}
-    {% endfor %}
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">CV</a></li>
+<!--        <li class="pure-menu-heading">More Sites</li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">Games</a></li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">News</a></li>
+        <li class="pure-menu-item"><a href="#" class="pure-menu-link">OMG!</a></li>
+        -->
+    </ul>
+</div>	
 
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-    {% else %}
-      <span>Next &raquo;</span>
-    {% endif %}
-  </div>
-  {% endif %}
-
-    </div>
-  </div>
+</body></html>
