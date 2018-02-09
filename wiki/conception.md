@@ -6,6 +6,12 @@ Principles
 grands principes objets
 ------
  - SOLID
+  o SRP
+  o OCP
+  o Liskov substitution principle (pas de cast)
+  o ISP (Interface Segregation PRinciple)
+  o Dependency INversion principale
+ - POLA Principle of least astonishment
  - KISS
  - DRY
  - demeter
@@ -102,3 +108,33 @@ Johanna ROJAS
 
 ### HTML print
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIA...
+
+
+Architecture Layers
+===================
+"archi-layers"
+https://www.petrikainulainen.net/software-development/design/understanding-spring-web-application-architecture-the-classic-way/
+https://softwareengineering.stackexchange.com/questions/258196/java-application-structure-horizontal-vs-vertical-split/258197#258197
+
+Database
+========
+Une bonne conception passe par un bon diagramme à jour, le plus simple (pour moi) est de réverser la base, seulement les outils qui fonctionnent bien dépendent de la base:
+- mySql
+l'outil phare  de mySQL: mySQL Workbench permet le reverse, ça marche très bien
+
+- postgres
+pgAdmin ne permet pas (plus) le reverse, il faut chercher d'autres outils
+https://stackoverflow.com/questions/9692913/create-an-er-diagram-in-pgadmin
+Datamodel designer for PostgreSQL: uniquement sous Linux.
+https://pgmodeler.io/support/installation permet le reverse, mais il faut le compiler... ou acheter le binaire.
+
+
+- oracle
+Oracle SQL Developer peut-être tweaké pour faire apparaitre la gestion des ERD
+
+- DB2 ?
+
+
+- Outils génériques basés sur du jdbc:
+ - dbVisualiser: non testé
+ - 
