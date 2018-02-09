@@ -66,7 +66,7 @@ Pour l'afficher :
 
 Les variables
 =============
-
+	${project.basedir} la racine du projet
     ${project.build.directory} results in the path to your "target" directory, this is the same as ${pom.project.build.directory}
     ${project.build.outputDirectory} results in the path to your "target/classes" directory
     ${project.name} refers to the name of the project (deprecated: ${pom.name} ).
