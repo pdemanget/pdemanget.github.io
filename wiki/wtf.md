@@ -21,3 +21,9 @@ SO Questions
 		I want to Create THIS Method in Amir Class
 		
 		Plz Help me...
+
+
+Question polymorphisme
+----------------------
+		
+https://stackoverflow.com/questions/48881903/cant-seem-to-understand-complex-polymorphism

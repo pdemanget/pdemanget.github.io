@@ -23,6 +23,10 @@ http://superuser.com/questions/454380/git-bash-here-in-conemu
 ### sous Linux: shift-ctrl-tab sur un terminal pour ouvrir plusieurs onglets
 pratique pour gérer différents dépots.
 
+### la taille du dépot et le filter-branch
+https://gist.github.com/magnetikonline/dd5837d597722c9c2d5dfa16d8efe5b9#file-gitlistobjectbysize-sh
+https://gist.github.com/pdemanget/166fb2a41dc8c86c7d211b5e2c6c4204
+
 
 Best practices
 ----

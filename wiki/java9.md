@@ -19,11 +19,15 @@ https://blog.codefx.org/tools/maven-on-java-9/
 https://github.com/cfdobber/maven-java9-jigsaw
 toolchains.xml
 
+https://github.com/mozilla/rhino/issues/10
+
 Modules
 --------
 
 
 java --add-modules java.xml.ws.annotation -jar front-maiv.jar
+java --add-modules java.xml.bind
+
 
 //module-info.java
 [open] module com.hello{
@@ -40,6 +44,8 @@ open/opens: pour la réflexion
 uses/provides: pour ServiceLoader
 
 Le chargement des modules par implem
+
+https://github.com/tfij/Java-9-modules---reducing-coupling-of-modules
 --------------------------------------
 DrinksService is an interface, CoffeeService is an implementation:
 
@@ -195,3 +201,6 @@ http://openjdk.java.net/projects/jigsaw/quick-start
 jar --describe-module --file ~/.m2/repository/org/slf4j/slf4j-api/1.8.0-beta1/slf4j-api-1.8.0-beta1.jar
 java --add-modules java.xml.ws.annotation -jar front-maiv.jar
 java --module-path mods -m com.greetings/com.greetings.Main
+
+#Spring - docker
+https://spring.io/guides/gs/spring-boot-docker/

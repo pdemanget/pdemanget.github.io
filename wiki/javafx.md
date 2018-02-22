@@ -278,11 +278,11 @@ fxmlLoader.getNamespace().put("key", maDonnee);
  
  
  
- CSS
- ====
+CSS
+====
  
- Effet néon
- ----------
+Effet néon
+----------
  -fx-effect: dropshadow( gaussian , derive(-Col_Orange,50%), 10, 0.5, 0, 0);
  Ombre
  -fx-effect: dropshadow( gaussian , -Col_Gray64 , 3, 0.1, 1, 1);
@@ -290,3 +290,10 @@ fxmlLoader.getNamespace().put("key", maDonnee);
  
  https://springboot-javafx-support.readthedocs.io/en/latest/
  
+Autres librairies
+=================
+https://github.com/badarshahzad/Jfx-Browser
+http://peacekeeper.futuremark.com/
+http://www.acidtests.org/
+
+http://www.jfoenix.com/ 

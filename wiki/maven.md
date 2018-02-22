@@ -14,6 +14,10 @@ deploy - done in the build environment, copies the final package to the remote r
 complete list:
 https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference
 
+La structure:
+https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
+
+
 Avoir un timestamp pour le suivi des release
 ----
 Ajouter cette ligne:

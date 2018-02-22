@@ -67,6 +67,25 @@ while ((length = inputStream.read(buffer)) != -1) {
 // StandardCharsets.UTF_8.name() > JDK 7
 return result.toString("UTF-8");
 
+IntegrationTest
+===============
+https://stackoverflow.com/questions/1399240/how-do-i-get-my-maven-integration-tests-to-run
+Nommer ses test d'inté xxxIT.java, puis pour les lancer/tester sous jenkins, utiliser mvn verify
+
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-failsafe-plugin</artifactId>
+		        <executions>
+	                <execution>
+	                    <phase>verify</phase>
+	                    <goals>
+	                        <goal>verify</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+            </plugin> 
+	
+
 Search-markdown
 ===============
 
