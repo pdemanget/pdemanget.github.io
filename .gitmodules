@@ -1,0 +1,3 @@
+[submodule "cv-yaml"]
+	path = cv-yaml
+	url = https://github.com/pdemanget/cv-yaml.git

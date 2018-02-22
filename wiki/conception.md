@@ -9,8 +9,8 @@ grands principes objets
   o SRP
   o OCP
   o Liskov substitution principle (pas de cast)
-  o ISP (Interface Segregation PRinciple)
-  o Dependency INversion principale
+  o ISP (Interface Segregation Principle)
+  o Dependency Inversion principale
  - POLA Principle of least astonishment
  - KISS
  - DRY
