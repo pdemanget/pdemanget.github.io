@@ -62,3 +62,32 @@ my alias
         lame = commit -a -m
         vomit = !git commit -a -m \"Auto commit\" && git push
         fmerge = merge --no-ff
+        
+Autre configuration
+-------------------
+
+# .gitconfig
+core.autocrlf
+core.safecrlf
+
+# .gitattributes
+*.sh text=auto eol=lf
+
+
+inclue le .gitconfig EN LOCAL
+[include]
+  path = ../.gitconfig
+
+  ou
+  
+    $ git config --local include.path ../.gitconfig
+    
+
+Depuis la documentation
+https://git-scm.com/docs/gitattributes
+
+    $ echo "* text=auto" >.gitattributes
+    $ git add --renormalize .
+    $ git status        # Show files that will be normalized
+    $ git commit -m "Introduce end-of-line normalization"
+

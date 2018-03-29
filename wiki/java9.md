@@ -204,3 +204,8 @@ java --module-path mods -m com.greetings/com.greetings.Main
 
 #Spring - docker
 https://spring.io/guides/gs/spring-boot-docker/
+
+Sources
+=======
+
+https://blog.codefx.org/java/five-command-line-options-to-hack-the-java-9-module-system/

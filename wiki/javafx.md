@@ -1,6 +1,55 @@
 JavaFX
 ======
 
+Basics
+======
+
+Expressions FXML
+----------------
+
+### Définir/utiliser une expression.
+		<fx:define>
+			<Measurement fx:id="m" />
+		</fx:define>
+			<TreeTableColumn fx:id="modelCategory" text="%template_label" prefWidth="${m.dp*200}" />
+### Stocker une valeur dans les méta du node
+Prendre exemple et copier VBox.vgrow
+
+    VBox.vgrow="ALWAYS"
+
+    public static void setVgrow(Node child, Priority value) {
+
+TableView
+---------
+
+### Binder une colonne
+On binde séparément la présentation et la valeur:
+	
+	heureEvenementColumn.setCellValueFactory(param -> param.getValue().localDateProperty());
+	heureEvenementColumn.setCellFactory( FXUtils.getDateCell(DateTimeFormatter.ofPattern("HH:mm:ss")));
+
+La Factory est définie avec un callback qui renvoie une classe existante ou une surcharge custom:
+
+    public static <ROW, T extends Temporal> Callback<TableColumn<ROW, T>, TableCell<ROW, T>> getDateCell(
+			DateTimeFormatter format) {
+		return column -> {
+			return new TableCell<ROW, T>() {
+				@Override
+				protected void updateItem(T item, boolean empty) {
+					super.updateItem(item, empty);
+					if (item == null || empty) {
+						setText(null);
+					} else {
+						setText(format.format(item));
+					}
+				}
+			};
+		};
+	}
+
+
+Astuces
+=======
 
 Observation des listes
 ----------------------
@@ -116,7 +165,12 @@ On peut le consulter pour voir les styles à surcharger, ou pour s'en inspirer, 
 Pour changer le style global:
 
     setUserAgentStylesheet(STYLESHEET_CASPIAN);
-    
+
+Getter un noeud par sélecteur CSS
+---------------------------------
+node.lookup(".classFoo")
+
+
 Packaging en EXE
 ----------------
 On peut packager en Jar, EXE, RPM DEB, et MSI d'après la doc Oracle:
@@ -269,11 +323,11 @@ fxmlLoader.getNamespace().put("key", maDonnee);
  
  
  
- Workaround et défauts
- ---------------------
- La gestion d'exception sur les location: l'exception est "mangée" sur les url sont incorrectes:
+Workaround et défauts
+---------------------
+ - La gestion d'exception sur les location: l'exception est "mangée" quand les url sont incorrectes:
                                  System.err.println(FXMLLoader.this.location + "/" + aValue);
-                                 
+ - cannot convert from observable integer to integerproperty: utiliser IntegerProperty.**toObject**()                                 
  
  
  

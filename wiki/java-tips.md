@@ -15,6 +15,9 @@ todo document:
                   scope     = Long.class)
 @JsonIgnoreProperties : mode passoire
 
+
+
+
 Old tips
 ========
 
