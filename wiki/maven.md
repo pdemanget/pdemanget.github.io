@@ -85,6 +85,9 @@ Les variables
 ${basedir} represents the directory containing pom.xml
 ${version} equivalent to ${project.version} (deprecated: ${pom.version})
 
+${basedir}/src/main/resources
+est équivalent à 
+${project.build.resources[0].directory}
 
 Tweak - bug
 ====

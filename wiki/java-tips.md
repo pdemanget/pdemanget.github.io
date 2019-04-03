@@ -15,6 +15,14 @@ todo document:
                   scope     = Long.class)
 @JsonIgnoreProperties : mode passoire
 
+CLI
+===
+
+List java processes
+--------------------
+    $ jps -l
+
+
 Old tips
 ========
 
