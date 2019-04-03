@@ -1,0 +1,2 @@
+- key editor
+- Compile annotation (for source meta reformat: method sort, getter lazy gen, enum ordinal ensure, space format ensure) @Format(sort=METHOD,indent=AUTO_SPACE) @Check(position=0) @Generate(PROPERTIES) 
