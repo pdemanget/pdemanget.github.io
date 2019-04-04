@@ -1,5 +1,5 @@
 Tour d'horizon des évolutions de version Java
-Voici ma liste anti-chronologiques des évolution Java.
+Voici ma liste anti-chronologiques des évolutions Java.
 
 https://www.oracle.com/technetwork/java/javase/archive-139210.html
 
