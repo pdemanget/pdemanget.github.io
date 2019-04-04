@@ -39,29 +39,5 @@ On peut facilement créer son site sur github.io, sur le domaine <username>.gith
  http://strapdownjs.com/
 
 
- ça marche online, pas besoin d'installation, c'est ready-to-use.
+ ça marche online, pas besoin d'installation, c'est ready-to-use.... à suivre
 
- 
-## Ne pas avoir peur de git rebase 1/2
-Le `git rebase` est **LA fonctionnalité** de git, avec les branches bien sûr.
-
-- Faire des développement en **//** sur `master` et sur la branche `tarte_salées`
-- Sur la branche `master`
-    - Modifier la **tarte aux poireaux** en ajoutant de la **crème**. ⇒ Commiter
-- Sur la branche `tarte_salées`
-    - Modifier la **tarte aux poireaux** en ajoutant des **œufs**. ⇒ Commiter
-    - Créer une **tarte aux concombres**. ⇒ Commiter
-- Regardez sur `gitk`, on est prêt à **rebaser** les 2 commits qui partent de la branche `tarte_salées`
-
----
-
-## Ne pas avoir peur de git rebase 2/2
-- Se placer sur `tarte_salées` et la **rebaser** sur `master` :  
-`git rebase master`
-- **⇒ Conflits** sur la **tarte aux poireaux**
-- Regarder la console, git précise ce qu'il faut faire pour résoudre le conflit :
-    - Lancer l'outil de **merge** `git mergetool`
-    - **Continuer** le rebase avec :
-`git rebase --continue`
-- *C'est fait !*
-- Constater avec `gitk --all` que la **base** de la branche `tarte_salées` a été déplacée et que les commits de cette branche ont **tous changé de sha1**

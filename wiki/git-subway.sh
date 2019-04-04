@@ -1,13 +1,13 @@
-Exemple de ce qu'il ne faut pas faire en git: l'historique plan de métro.
-
-Ci-dessous on crée un historique git représentant le plan de métro de Lyon.
-
-pour voir cet historique:
-
-    $ gitk --all&
-    
-
-Script lancé pour créer les branches:
+#Exemple de ce qu'il ne faut pas faire en git: l'historique plan de métro.
+#
+#Ci-dessous on crée un historique git représentant le plan de métro de Lyon.
+#
+#pour voir cet historique:
+#
+#    $ gitk --all&
+#    
+#
+#Script lancé pour créer les branches:
 
 #on devrais ajouter un commit pour le terminus d'une ligne.
 
@@ -29,7 +29,7 @@ git checkout --orphan D
 echo "VAI" >> D.txt && git commit -a -m "VAI"
 
 echo "VMY" >> D.txt && git commit -a -m "VMY"
-echo "GOR" >> D.txt && git commit -a -m "GOT"
+echo "GOR" >> D.txt && git commit -a -m "GOR"
 echo "JEA" >> D.txt && git commit -a -m "JEA"
 
 # node
