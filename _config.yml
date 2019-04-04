@@ -4,6 +4,9 @@ title: Pdemanget site.
 #url: https://www.undiscoveredattractions.com
 #logo: halve.png                                       # Site logo
 locale: fr_FR
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Left Block Images
 #background:
