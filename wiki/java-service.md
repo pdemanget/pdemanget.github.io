@@ -151,10 +151,11 @@ Donc voila: on a une dépendance de plus pour la classe main, et 3 plugins:
  - maven-windows-service-installer-plugin: le plugin qui génère le zip installer et qui intègre votre livrable, la JRE utilisée depuis JAVA_HOME et le wrapper de service
  - build-helper-maven-plugin: pour installer le zip (assez gros) sur votre dépot.
 
-Tout la difficulté consiste à bien maitriser les paramètres, le répertoire cible, ce qu'on embarque, et la ligne de lancement. Les paramètres sont visible sur la javadoc:
+Pour faire marcher le plugin, il faut ajouter les dépendances manquantes, et ajouter tous les paramètres de pacakging/lancement:  
+Tout la difficulté consiste à bien maitriser ces paramètres, le répertoire cible, ce qu'on embarque, et la ligne de lancement. Les paramètres sont visible sur la javadoc:
 http://alexkasko.github.io/windows-service-installer/plugin/installer-mojo.html
 
-J'avais fait l'erreur de charger des fichiers de configuration dans le classpath, mais comme on ne maitrise pas le classpath généré, il vaut mieuxx les charger classiquement 
+J'avais fait l'erreur de charger des fichiers de configuration dans le classpath, mais comme on ne maitrise pas le classpath généré, il vaut mieux les charger classiquement 
 dans le filesystem (le répertoire en cours est la racine d'install, utiliser des chemins relatifs). 
 Pour logback, on voit ici l'ajout permettant de spécifier un fichier externe: _<prunsrvJvmOptions>-Dlogback.configurationFile=d:\your-application\conf\logback.xml</prunsrvJvmOptions>_
   
