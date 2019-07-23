@@ -1,0 +1,7 @@
+Aujourd'hui, je découvre les nouveaux packaging, par harsard: Ubuntu propose la version "snap" du logiciel quand apt ne l'a pas:
+
+No apt package "hub", but there is a snap with that name.
+
+
+voilà les différences entre ces  repos:
+https://askubuntu.com/questions/866511/what-are-the-differences-between-snaps-appimage-flatpak-and-others

@@ -1,0 +1,14 @@
+
+
+1. git structure
+2. local install
+
+### 1. git structure
+
+https://dendibakh.github.io/guides/github-pages/
+
+### 2. local install
+https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll#step-2-install-jekyll-using-bundler
+
+gem install bundler
+bundler install
