@@ -77,7 +77,6 @@ in majuscule, the mnemotechnic letter to memorize
 ### java navigation
 - shift-ctrl-T: open Type
 - ctrl o o: Open method
-- shift-ctrl 
 
 ### file navigation
 - ctrl-shift-R: open Resource

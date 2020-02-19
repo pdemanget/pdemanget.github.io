@@ -3,9 +3,14 @@ Voici ma liste anti-chronologiques des évolutions Java.
 
 https://www.oracle.com/technetwork/java/javase/archive-139210.html
 
+
+Java next - ? 
+---------
+- jpackage 
+
 Java 13 - Septembre 2019 
 ---------
-- jpackage
+
 - les chaines brutes (raw string) 
 
 
@@ -61,13 +66,6 @@ Ensuite on verra ce message assez souvent si on oublie d'activer l'option "previ
  https://stackoverflow.com/questions/52232681/compile-a-jdk12-preview-feature-with-maven
 
 
-
-
-
-
-
-
-
 Java 11 - March 2018
 --------
 Depuis mars 2019 plus de version libre par Oracle, il faut chercher les versions open-sources:
@@ -113,7 +111,9 @@ Nouveauté:
  - le mot-clef var est autorisé dans les lambda.
  - 2 nouveaux GC: Epsilon (pour tests) et ZGC (optimisé pour des Heap très gros)
  
-
+### update
+sources de téléchargement 
+<https://jdk.java.net/java-se-ri/11>
 
 
 Java 10 - March 2018
@@ -146,7 +146,7 @@ Evolution plutot mineure de java
 Java 1.5
 --------
 Evolution majeure du jdk, nommée officiellement "Java 5" qui voit apparaitre les Generics. Les listes et map sont enfin typées!
-En code:
+
 
 Java 1.4
 --------

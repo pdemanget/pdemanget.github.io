@@ -82,6 +82,10 @@ Deserialize a list
 
 		values = mapper.readValue(getClass().getResourceAsStream(ANY_JSON),new TypeReference<List<YourValue>>() {});
 
+Other annotations
+-----------------
+Deserialisation pass with everything (no control)
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 
 Custom serializer

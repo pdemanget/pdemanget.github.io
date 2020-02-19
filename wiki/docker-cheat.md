@@ -1,6 +1,14 @@
 Docker cheat sheet
 ======================
 
+Install
+=======
+add right to docker group
+sudo addgroup docker
+sudo usermod -a -G docker $USER
+
+(or sudo adduser $USER docker)
+
 Images
 ======
 docker images : display images  
@@ -9,7 +17,8 @@ docker rmi: remove images
 docker build . -t image_name : create image from Dockerfile  
 docker commit 12345678904b5 mysnapshot: create image from container  
 docker save -o <save image to path> <image name>: save image as tar file  
-docker load -i <image path> : load tar image file  
+docker load -i <image path> : load tar image file
+  
 
 Registry
 ========
@@ -50,6 +59,9 @@ Network
 
 Volume
 ======
+SE-linux
+:z suffix
+
 
 Swarm
 =====
@@ -59,6 +71,25 @@ Swarm
 	docker stack deploy -c stack.yml postgres
 	docker stack ps postgres
 	docker stack rm postgres
+
+Compose
+=======
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+
+   volumes:
+     - ./:
+   ports:
+    - "65000:80"
+
 
 
 Stack
@@ -89,3 +120,14 @@ Urls
 ====
 [docker hub](https://hub.docker.com/)  
 [docker doc](https://docs.docker.com/)
+
+
+Docker hub prefered images
+==========================
+
+postgres
+openjdk
+
+to be tested
+------------
+store/oracle/jdk:11 (payante)

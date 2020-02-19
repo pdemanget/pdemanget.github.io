@@ -41,8 +41,8 @@ The logback file should be well configured and think of some points:
 - The main log level and the specialisation
     The root level is a default level and can be lowered or raised for any logger.
 
-Some not very known feature of logbakc are very powerfull: 
- - you can get method name and line number: for seom bad loggers it could be usefull
+Some not very known feature of logback are very powerfull: 
+ - you can get method name and line number: for some bad loggers it could be usefull
  - you can have a static alignment, which is very good for readability under less.
  
 - the log pattern format

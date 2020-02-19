@@ -1,20 +1,21 @@
-SSE
-===
+Server Sent Event : SSE
+=======================
 
-https://dzone.com/articles/spring-boot-server-sent-events-tutorial
-https://www.html5rocks.com/en/tutorials/eventsource/basics/
-https://developer.mozilla.org/en-US/docs/Web/API/EventSource
-https://www.w3schools.com/html/html5_serversentevents.asp
-https://tools.ietf.org/id/draft-ietf-alto-incr-update-sse-05.html
-https://tools.ietf.org/html/rfc6202
-https://www.w3.org/TR/eventsource/
+<https://dzone.com/articles/spring-boot-server-sent-events-tutorial>
+<https://www.html5rocks.com/en/tutorials/eventsource/basics/>
+<https://developer.mozilla.org/en-US/docs/Web/API/EventSource>
+<https://www.w3schools.com/html/html5_serversentevents.asp>  
+<https://tools.ietf.org/id/draft-ietf-alto-incr-update-sse-05.html>
+<https://tools.ietf.org/html/rfc6202>
+<https://www.w3.org/TR/eventsource/>
 
 from rfc6202: disable chuncking
 
-    
+JS code:    
 	var evtSource = new EventSource('sse.php');
-	evtSource.onmessage = function(e) {
-	
+	evtSource.onmessage = function(e) { ... }
+
+HTTP Stream:
 	Content-Type: text/event-stream
 
 	id: 12345\n
@@ -27,21 +28,21 @@ from Webflux exemple, Content-Type: application/stream+json
 
 Reactive programming
 --------------------
-http://projectreactor.io/docs/core/release/reference/#flux
+<http://projectreactor.io/docs/core/release/reference/#flux>
 
 
 Java client
 -----------
-https://github.com/king/king-http-client
+<https://github.com/king/king-http-client>
 
 
-https://stackoverflow.com/questions/15495591/looking-for-a-java-implementation-of-the-client-side-of-the-server-sent-events-s
--> Jersey SSE Client jersey-media-sse-2.2.ja
+<https://stackoverflow.com/questions/15495591/looking-for-a-java-implementation-of-the-client-side-of-the-server-sent-events-s>
+-> Jersey SSE Client jersey-media-sse-2.2.jar
 
-https://hc.apache.org/httpcomponents-client-ga/
+<https://hc.apache.org/httpcomponents-client-ga/>
 
 square.github.io/okhttp/3.x/okhttp/
-https://github.com/heremaps/oksse
+<https://github.com/heremaps/oksse>
 
 
 Notes

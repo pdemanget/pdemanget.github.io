@@ -1,5 +1,19 @@
 ws-ml
 -----
+WhiteSpace MetaLanguage
+
+Usage
+=====
+ 
+ * encode
+ 
+    ws-ml -file datafile -code destfile
+
+ * decode
+ 
+    ws-ml -file createddatafile -decode codedfile
+
+
 
 key-vallist transco
 
@@ -18,7 +32,8 @@ byte
 char
 0A
 
-0D
+0D
+
 20 
 09	
 
@@ -36,7 +51,8 @@ a:[hello]
 	
 	 
 				
-						
+						
+
 '''ws-8
 
 0 1201 0 1 21 1220 1211 1230

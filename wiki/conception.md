@@ -11,10 +11,12 @@ grands principes objets
   o Liskov substitution principle (pas de cast)
   o ISP (Interface Segregation Principle)
   o Dependency Inversion principale
- - POLA Principle of least astonishment
- - KISS
- - DRY
- - demeter
+- POLA Principle of least astonishment
+- KISS
+  o simple but not simpler
+- DRY
+- demeter
+- SoC Separation of Concern 
 
 Principes DB
  - ATOMIC
@@ -138,3 +140,47 @@ Oracle SQL Developer peut-être tweaké pour faire apparaitre la gestion des ERD
 - Outils génériques basés sur du jdbc:
  - dbVisualiser: non testé
  - 
+
+ 
+Semantic Versioning 2.0.0
+--------------------------
+Summary
+
+Given a version number MAJOR.MINOR.PATCH, increment the:
+
+    MAJOR version when you make incompatible API changes,
+    MINOR version when you add functionality in a backwards compatible manner, and
+    PATCH version when you make backwards compatible bug fixes.
+
+Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
+### My versionning
+Not compatible with semver, but more similar to many products: (breaking change between maven 3.6 & 3.5, Windows 8.1&8, their are plenty of)
+Why semver classical could fail: 
+ - Commercial/direction team impose you the major version for communication (Developpers: don't let you impose the minor and patch version, it is yours!)
+ - Major version increment too much because of an instable API: the "version 42" in semver documentation . The API are imposed by your planning, your team or whatever factor, the "dont do it" is not a solution here (cause sometime we have to) 
+
+
+- MAJOR is political: strategy to sell new software, architecture strategies with or without breaking changes
+- MINOR is technical , new functionnality OR breaking change, incompatible API Change
+- PATCH, MUST be backward compatible, it MAY include new functionnalities but shouldn't.
+
+It resolve the problem of "version 42" when API change frequently: 
+it will be a CommercialVersion.42.patch instead
+ example: 8.42.3 if you stick to java version. Then 11.0.0 since change jdk version is a big architectural change.
+ 
+ I think it is a good compromise: 
+ - The major version is for the direction: the direction can manage the main process of a global version and its implication potentially external
+ - The minor version is for the development: the project manager can manage and follow his compatible/incompatible version internally
+ - The patch version is for the maintenance: no need to ask anyone to fix a bug, but absolutely forbidden to break anything. 
+
+It is a "simpler" solution, to keep it simple but not simpler, the development should 
+have an action on every major.minor.patch version.
+
+REX
+===
+Decoupling Webservice/REST/bus/ESB :
+ + réduit le couplage de compilation (évite les plats de spagetthi)
+ - ça reste un couplage, qui est moins traçable => utiliser une lib d'api commune pour 
+   tracer le couplage dans les dépendances maven.
+

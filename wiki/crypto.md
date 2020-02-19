@@ -24,7 +24,7 @@ https://stackoverflow.com/questions/6482484/how-to-use-key-and-crt-file-in-java-
 File formats
 ------------
 - .pem, .cer, .cert
-- .p12, .pfx : conatins both certificate en private keys.
+- .p12, .pfx : contains both certificate en private keys.
 - .ssh/id_rsa.pub & .ssh/id_rsa 
 
 .pem == .cer == .cert == "PEM"
@@ -46,11 +46,20 @@ GUI:
 - portecle
 
 
+### nginx
+
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout selfsigned.key -out selfsigned.crt
+
+ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
 
 
 Convertion of file format with openssl
 ----------------------------------------
 https://www.sslshopper.com/article-most-common-openssl-commands.html
+
+### afficher contenu d'un pem
+openssl x509 -in cert.pem -text -noout
 
 
 
@@ -100,6 +109,11 @@ openssl pkcs12 -export -out applix.pfx -inkey applix.key -in applix.crt -name ap
 openssl pkcs12 -export -out wincc.pfx -inkey wincc.key -in wincc.crt -name wincc -password pass:password
 
 ## use in java
+THE keystore, is the old fashionned private way to use keys in java.
+
+-noprompt
+
+keytool -importcert -help
 
 
 

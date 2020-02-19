@@ -12,7 +12,7 @@ Why?
 
 Syntax
 ======
-There are 2 levels of syntax, the regular with limited functionnalities, and the specific that may differ from provider to provider.  
+There are different levels of syntax, the regular with limited functionnalities, and the specific that may differ from provider to provider.  
  For example there is the github flavored markdown:
 [github flavored markdown specification](https://github.github.com/gfm/)
 synthetic usage:[github md guide](https://guides.github.com/features/mastering-markdown/)
@@ -51,13 +51,26 @@ The line is under
 HR separator: 3 spaces or less and --- (different on github, plugins ...)  
    ---
 
-The extended syntax
---------------------
+links and images
+-----------------
+This works nearly on all markdown converters:  
+
 - img
   ![GitHub Logo](https://image.flaticon.com/icons/png/128/34/34323.png)
 
 - url
 [GitHub](http://github.com)
+
+Note to footer [foo]  
+any text
+
+
+[foo]: http://example.com/  (Optional Title Here)
+
+The extended syntax
+--------------------
+This is mostly reserved to github flavored markdown, but usefull for technical documentation, 
+and absolutly necessary to me. 
 
 blockquotes:
 > Markdown is 
@@ -67,11 +80,7 @@ Task lists:
  - [x] done
  - [ ] todo
 
-Note to footer [foo]  
-any text
 
-
-[foo]: http://example.com/  (Optional Title Here)
 
 Tables:
 
@@ -103,14 +112,9 @@ For advanced usage there are more powerful tools to install:
  - plantUML
 
 
-
-
-
-	
-  
 Diagrams
 =========
-
+Some of theses tools rely on img display and are mostly compatible to markdown viewers.
 Graphviz
 -------
 create an input.dot file  
@@ -159,4 +163,19 @@ Annex
 more sources:  
 https://github.com/grosenberg/fluentmark  
 https://pandoc.org/  
+
+Concurrence
+-----------
+selection of markup languages:
+md: Markdown, or my preference: Github flavoured Markdown
+rst:ReStructured Text
+creole
+textile
+adoc: AsciiDoc
+orgmode
+wiki-forum specific: MediaWiki, DocuWiki, BBCode
+
+<https://stackoverflow.com/questions/4656298/which-wiki-text-syntax-or-markdown-to-use>
+
+
 

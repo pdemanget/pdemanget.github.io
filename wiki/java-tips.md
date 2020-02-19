@@ -22,9 +22,20 @@ List java processes
 --------------------
     $ jps -l
 
+Errors
+------
+StringWriter errors = new StringWriter();
+ex.printStackTrace(new PrintWriter(errors));
+return errors.toString();
+
+
 
 Old tips
 ========
+
+Remote debug
+------------
+-Xdebug-Xrunjdwp:transport=dt_socket,address=9009,server=y,suspend=n
 
 Protocol on URL
 -------
