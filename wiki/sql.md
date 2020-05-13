@@ -34,6 +34,19 @@ select TABLE_NAME, COLUMN_NAME, COMMENTS from user_col_COMMENTS
   where ...
 order by 1;
 
+
+Version
+--------
+select * from v$version
+
+
+functions
+-----
+ case when commision_pct is null then 'No Commission' else commision_pct end 
+coalesce(commision_pct, 'No Commission')
+nvl()
+
+
 Mysql
 =====
 The authentication has changed from mysql V8, you must use a compatible client and server.  

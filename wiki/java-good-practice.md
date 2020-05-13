@@ -34,3 +34,8 @@ other technologies:
 - slf4j: logger
 - flyway: automate db migration for CD
 - swagger: auto-documentation of REST
+
+# general coding
+
+- use enum instead of most String/int constants
+  

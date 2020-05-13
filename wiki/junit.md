@@ -7,9 +7,14 @@ https://dev.to/stealthmusic/why-you-should-start-using-junit-5-5gk2
 ### Classical test
 Use the new annotation of junit5: @DisplayName  @Nested and @ExtendWith(MockitoExtension.class) (Non need to use java inheritance)
 
-
-
-@DisplayName("An account")
+    import org.junit.jupiter.api.Assertions;
+    import org.junit.jupiter.api.DisplayName;
+    import org.junit.jupiter.api.Test;
+    
+    @Test
+    @DisplayName("An account")
+    public void anAccountTest(){ ... }
+    
 
 ### Advanced tests
 
@@ -29,3 +34,10 @@ https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-execution-o
 @ParameterizedTest
 @ValueSource(strings = { "racecar", "radar", "able was I ere I saw elba" })
 void palindromes(String candidate) {
+
+
+How to test Spring boot
+-----------------------
+2 complementary options: Mockito @Mock/@InjectMocks and @SpringBootTest
+
+public class RetourReparationServiceTest {

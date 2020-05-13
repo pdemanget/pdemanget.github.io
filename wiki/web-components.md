@@ -25,7 +25,7 @@ expliquerais pas (pas besoin pour ce tuto)
 
 test server
 ===========
-D'abord lançon un serveur local
+D'abord lançons un serveur local
 python -m http.server 
 cela permet d'ouvrir les fichiers du répertoire en cours depuis un serveur Web.
 
@@ -39,9 +39,7 @@ la ligne de commande unique à retenir pour créer son tag c'est :
 
 
     On commence par créer son propre tag, c'est le __custom elements__.
-
-     
-    
+   
     customElements.define('hello-world', PopUpInfo);
 
     <!-- Using Custom Elements -->
@@ -89,6 +87,9 @@ API: <template> [yourHTML...] </template>
 Exemple full
 ------------
 Voila un exemple hello-world qui combine les trois:
+1. on utilise un tag custom
+2. on défini le template HTML
+3. On charge le template dans le shadow-Dom du custom element.
 
 
     <hello-world></hello-world>
@@ -112,6 +113,10 @@ Voila un exemple hello-world qui combine les trois:
         }
         customElements.define( 'hello-world', HelloWorld )
     </script>
+
+### chargement du webcomponent
+- soit on défini le template en HTML puis on l'incus en JS (cas standard)
+- soit on définit tout en JS, et on charge le HTML en fetch (workaround poour simuler un HTMLImport)
 
 
 HTML import (deprecated)

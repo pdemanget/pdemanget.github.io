@@ -115,6 +115,10 @@ Problems
     docker ps fail: 
        - start docker service 
        - check user rights on docker fifo:/var/run/docker.sock.
+Advanced
+========
+docker stats : ram usages
+
 
 Urls
 ====
@@ -131,3 +135,10 @@ openjdk
 to be tested
 ------------
 store/oracle/jdk:11 (payante)
+
+
+Podman
+======
+podman pod create
+podman run -pod ...
+

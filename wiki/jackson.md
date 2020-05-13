@@ -43,6 +43,42 @@ Basic usage
                         <version>2.9.6</version>
                 </dependency>
 
+### java 8,9,11 updates
+jsr10 is now part of jackson-modules
+https://github.com/FasterXML/jackson-modules-java8/tree/master/datetime
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson</groupId>
+            <artifactId>jackson-bom</artifactId>
+            <version>2.10.2</version>
+            <scope>import</scope>
+            <type>pom</type>
+        </dependency>   
+    </dependencies>
+</dependencyManagement>
+<dependency>
+    <groupId>com.fasterxml.jackson.datatype</groupId>
+    <artifactId>jackson-datatype-jdk8</artifactId>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+</dependency>
+
+#### Jackson 3.0
+Jackson 3.0 changes things as it requires Java 8 to work and can thereby directly supported features.
+
+
+    ObjectMapper mapper = new ObjectMapper();
+    mapper.findAndRegisterModules();
+or
+    ObjectMapper mapper = new ObjectMapper();
+    mapper.registerModule(new JavaTimeModule());
+
+
+
+
 ### annotate your DTO class if needed
 
     class YourValue{

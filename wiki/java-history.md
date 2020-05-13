@@ -4,14 +4,61 @@ Voici ma liste anti-chronologiques des évolutions Java.
 https://www.oracle.com/technetwork/java/javase/archive-139210.html
 
 
-Java next - ? 
+Suivre les évolutions de Java
 ---------
-- jpackage 
+
+Ou trouver de l'information:
+  https://dzone.com/articles/a-guide-to-java-versions-and-features
+https://advancedweb.hu/a-categorized-list-of-all-java-and-jvm-features-since-jdk-8-to-14/
+Regarder également la denière version "early access" (attention les version précédente ne seront pas disponibles):
+http://jdk.java.net/
+
+
+- jpackage toujours attendu? 
+
+
+Roadmap:
+ 2 versions par an, 1 LTS tous les 3 ans (donc toutes les 6 versions)
+
+
+Voici mes notes sur les version "historiques" de Java. certaines sont plus importantes que d'autres, certaines équipes un peu frileuse ont pu rester sur des évolutions importantes telles que 4 ou 5 ou 8.
+La dernière évolutions à "faire peur" est le passage java 8-> java 11 incluant les modules jigsaw et l'externalisation de JavaFX.
+
+1995 jdk beta
+1996 java 1.0
+1997 java 1.1
+1998 java 1.2 surnommée Java 2. évolution majeure des API de collection (Vector)
+2000 java 1.3
+2002 java 1.4 évolution importantes égalementsmot clef assert, évolutions des API regex, image.
+2004 java 5 évolution majeure: les type generics.  Suppression du "1." de la version
+2006 java 6
+2011 java 7
+2014: Java 8 evolution majeure avec les lambda
+2017: java 9 evolution majeure incluant jigsaw
+2018: java 10 (externalisation de JavaFX) et 11 (LTS)
+2019: java 12 et 13
+2020: java 14 et 15
+2021: java 16 et 17 (LTS)
+2022: fin du support java 8
+2023: fin du support java 11
+
+Java 14 - 2020
+--------------
+https://linuxfr.org/news/java-14-tombe-le-masque
+On avait déjà les var (ouai :/) on a maintenant:
+- le record: genre de classe immutable comme en scala, génère des equals, getters, setter
+- instanceOf "pattern Matching" : éviter une ligne de cast
+
+
+le jPackage? Evolution importante mais facultative permettant de "packager" les modules jigsaw mais en les "linkant" d'abords dans l'objectif de réduire le livrable (fatjar ou uberJar)
+(Ces phases de link et de packaging ne sont pas sans rappeler le link et les flatpak)
+
 
 Java 13 - Septembre 2019 
 ---------
 
-- les chaines brutes (raw string) 
+- les chaines brutes (raw string) multilignes!
+- le switch fonctionnel. (depuis la 12 en preview-feature, officiel maintenant) 
 
 
 
