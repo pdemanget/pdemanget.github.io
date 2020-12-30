@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html><head>
+<style>
+	/* gradiant pour les rayures */
+	
+.stripes {
+  color: black;
+
+  background: 
+   /* On "top" */
+   repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 10px,
+    #ccc 10px,
+    #ccc 20px
+  ),
+  /* on "bottom" */
+  linear-gradient(
+    to bottom,
+    #eee,
+    #999
+  );
+}
+
+/* gestion de la 3D */
+/* rappels CSS3:
+transitions
+animations-keyframes
+transformations 2D-3D rotate, rotatex, translatex
+
+-webkit-perspective: 1000px;
+-webkit-transform-style:           preserve-3d;
+
+*/
+
+.scene{
+	perspective: 1000px;
+	width: 600px;
+	height: 340px;
+	border: 1px solid #222;
+}
+
+.object{
+	transform-style: preserve-3d;
+	transform: rotateX(0deg) rotateY(45deg) rotateZ(0deg);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.face{
+	position: absolute;
+	border: 1px solid #555;
+	
+}
+
+.sud{
+	width:100px;
+	height:100px;
+	transform: translateX(100px) rotateY(0deg)
+}
+
+.est{
+	width:400px;
+	height:100px;
+
+	transform: translateX(-50px) rotateY(-90deg)
+}
+
+.haut{
+	width:400px;
+	height:100px;
+
+	transform: translateY(150px) rotateX(45deg);
+}
+</style>
+</head><body>
+	
+	<div class="stripes"> 
+		a div 
+		<br/>.........
+		<br/>.............. 
+	</div>
+	
+	<div class="scene">
+		<div class="object">
+			<div class="face haut">
+				Haut
+			</div>
+			<div class="face sud stripes">
+				Sud
+			</div>
+			<div class="face est">
+				Est
+			</div>
+		</div>
+	</div>
+	
+	<div>
+		Thanks for the ressources
+		<a href="http://animateyourhtml5.appspot.com/pres/index.html?lang=fr#1">from Martin Görner</a>
+		
+		<a href="https://css-tricks.com/stripes-css/">css-tricks</a>
+		
+		
+	</div>
+</body></html>

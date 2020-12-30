@@ -1,0 +1,40 @@
+<html><head><title>Post</title>
+<script src="../markdown.js"></script>
+
+</head><body>
+	<div id="post_toolbar"></div>
+	<div id="preview"> </div>
+<script>
+	function indexls(){
+	  fetch('index.ls').then(response=>response.text())
+	    .then(text=>{
+				let result='';
+				text.split('\n').forEach(line=>{
+					console.log("line:"+line);
+					result += '<br> <a href="#'+line+'">'+line+'</a>';
+				});
+				console.log(result);
+				post_toolbar.innerHTML = result;
+			});
+		
+	  // preview.innerHTML = markdown.toHTML(loadAjax(file));
+  }
+
+  function load(){
+	  let file = "post.md";
+	  if( window.location.hash ){
+			file = window.location.hash.substring(1);
+	  }
+	  console.log("current"+file);
+	  fetch(file).then(response=>response.text())
+	    .then(text=>preview.innerHTML = markdown.toHTML(text));
+	  // preview.innerHTML = markdown.toHTML(loadAjax(file));
+  }
+  
+	load();
+	indexls();
+  window.onhashchange=load;
+</script>
+
+
+</body></html>
