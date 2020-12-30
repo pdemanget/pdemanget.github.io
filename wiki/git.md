@@ -23,6 +23,37 @@ http://superuser.com/questions/454380/git-bash-here-in-conemu
 ### sous Linux: shift-ctrl-tab sur un terminal pour ouvrir plusieurs onglets
 pratique pour gérer différents dépots.
 
+### la taille du dépot et le filter-branch
+https://gist.github.com/magnetikonline/dd5837d597722c9c2d5dfa16d8efe5b9#file-gitlistobjectbysize-sh
+https://gist.github.com/pdemanget/166fb2a41dc8c86c7d211b5e2c6c4204
+
+### set user localy
+just skip the global here
+git config --global user.email jekyll@example.com
+
+
+### filter env et change user
+
+     #!/bin/sh
+     
+     git filter-branch --env-filter '
+     
+     OLD_EMAIL="your-old-email@example.com"
+     CORRECT_NAME="Your Correct Name"
+     CORRECT_EMAIL="your-correct-email@example.com"
+     
+     if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+     then
+         export GIT_COMMITTER_NAME="$CORRECT_NAME"
+         export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+     fi
+     if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+     then
+         export GIT_AUTHOR_NAME="$CORRECT_NAME"
+         export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+     fi
+     ' --tag-name-filter cat -- --branches --tags
+
 
 Best practices
 ----

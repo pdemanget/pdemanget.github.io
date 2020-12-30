@@ -1,0 +1,26 @@
+<html><head><title>Post</title>
+<script src="markdown.js"></script>
+
+</head><body>
+    <div id="preview"> </div>
+<script>
+let loadText= function(url) {
+	return fetch(url).then(response=>{
+		return response.text();
+	})
+};
+
+let url="_posts/post.md"
+
+if (window.location.hash){
+	url=window.location.hash.substring(1)
+	alert(url)
+}
+loadText(url).then(text=>{
+	preview.innerHTML = markdown.toHTML(text);
+})
+  
+</script>
+
+
+</body></html>

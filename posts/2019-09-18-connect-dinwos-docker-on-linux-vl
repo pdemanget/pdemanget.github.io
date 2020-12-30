@@ -1,0 +1,104 @@
+
+
+Configure fedora vm
+===================
+
+after docker install, enable ssh:
+
+sudo yum install openssh-server
+sudo systemctl start sshd.service;
+sudo systemctl enable sshd.service;
+
+
+
+# Reload the systemd daemon.
+sudo systemctl daemon-reload
+
+# Restart Docker.
+sudo systemctl restart docker
+
+
+
+
+in virtualbox:
+ -map port SSH: 22 docker: 2375 2376 (and all other port exposed by your containers)
+
+The default port for docker is 
+ - 2375 (unencrypted) and 
+ - 2376(encrypted) 
+
+
+ 
+Configure docker in windows
+===================
+   docker-machine create --driver generic --generic-ip-address=127.0.0.1 \
+      --generic-ssh-key "$HOME/.ssh/id_rsa" \
+      --generic-ssh-user=pdemanget remote-docker-host
+      
+      
+    set DOCKER_HOST=tcp://localhost:2376   
+      
+      in bash
+      
+       export DOCKER_API_VERSION=1.26
+       export DOCKER_HOST=tcp://localhost:2375
+       
+ANALYSE
+=======
+
+Service restart failed with that tips, however the working solution for me is:
+
+
+<code>
+
+$ sudo vim /etc/sysconfig/docker-network
+
+DOCKER_NETWORK_OPTIONS=-H tcp://0.0.0.0:2375 -H unix://
+
+</code>
+
+
+Basicaly I don't override service startup but modify vairale env instead.
+
+
+I found the service script & file & variables include here:
+/usr/lib/systemd/system/docker.service/usr/lib/systemd/system/docker.service
+
+
+vi /usr/lib/systemd/system/docker.service/usr/lib/systemd/system/docker.service
+sudo vim /etc/sysconfig/docker-network
+
+WORKING SOLUTION
+================
+sudo vim /etc/sysconfig/docker-network
+
+
+      
+ISSUES
+======
+https://docs.docker.com/engine/reference/commandline/cli/
+DOCKER_HOST="tcp://YourRemoteDocker:443" DOCKER_CERT_PATH=~/.docker DOCKER_TLS=1 docker images
+-H fd:// -H tcp://0.0.0.0:2375
+      /usr/lib/systemd/system/docker.service
+      
+      
+      unable to resolve docker endpoint: open C:\Users\pdemanget\.docker\ca.pem: The system cannot find the file specified.
+      
+      :q
+      export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="XXXXXX\.docker\machine\machines\default"
+export DOCKER_MACHINE_NAME="default"
+export COMPOSE_CONVERT_WINDOWS_PATHS="true"
+# Run this command to configure your shell:
+# eval $("D:\Program Files\Docker Toolbox\docker-machine.exe" env)
+
+
+ docker-machine env fed
+Error checking TLS connection: Error checking and/or regenerating the certs: There was an error validating certificates for host "127.0.0.1:2376": EOF
+You can attempt to regenerate them using 'docker-machine regenerate-certs [name]'.
+Be advised that this will trigger a Docker daemon restart which might stop running containers.
+
+cat /usr/lib/systemd/system/docker.service.d/flannel.conf
+[Service]
+EnvironmentFile=-/run/flannel/docker

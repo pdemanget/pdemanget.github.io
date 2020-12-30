@@ -1,0 +1,9 @@
+Conception online tools
+======================
+
+<https://www.websequencediagrams.com/>
+<https://www.planttext.com/>
+<https://yuml.me/diagram/boring/class/draw>
+
+<https://yuml.me/diagram/plain/class/%2F%2F%20Cool%20Class%20Diagram,%20[Customer|-forname:string;surname:string|doShiz()]%3C%3E-orders*%3E[Order],%20[Order]++-0..*%3E[LineItem],%20[Order]-[note:Aggregate%20root%7Bbg:wheat%7D].png>
+

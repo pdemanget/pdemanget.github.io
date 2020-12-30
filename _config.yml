@@ -5,6 +5,11 @@ title: Pdemanget site.
 #logo: halve.png                                       # Site logo
 locale: fr_FR
 
+plugins:
+#  - jekyll-seo-tag
+  - jekyll-sitemap
+exclude:
+  - draft
 # Left Block Images
 #background:
 #  homepage: images/home.png                           # this image will be shown on homepage's left block

@@ -1,0 +1,21 @@
+
+
+VanillaJS DOM usage
+-------------------
+The last updates of ES5,6,7 make the javascript usable without additionnal libraries:
+
+To see the usage in the general browser, use canIUse:
+<https://caniuse.com/#search=queryselectorall>
+
+Jquery like functions for Dom research: 
+
+ - element.getElementById
+ - document.querySelector
+ - document.querySelectorAll
+ - document.getElementsByTagName
+ 
+sources
+https://developer.mozilla.org/en-US/docs/Web/API/Document.querySelectorAll
+
+<https://developer.mozilla.org/fr/docs/Web/API/Document>
+<https://developer.mozilla.org/fr/docs/Web/API/Element>

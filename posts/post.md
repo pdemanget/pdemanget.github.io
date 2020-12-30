@@ -39,6 +39,7 @@ On peut facilement créer son site sur github.io, sur le domaine <username>.gith
  http://strapdownjs.com/
 
 
+ ça marche online, pas besoin d'installation, c'est ready-to-use.... à suivre
  ça marche online, pas besoin d'installation, c'est ready-to-use.
 
  

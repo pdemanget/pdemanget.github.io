@@ -1,0 +1,94 @@
+Comment réinstaller windows 7 from scratch:
+ 
+1.windows
+2.LAN (CD)
+3.désactiver swap (SSD) et hibernation (hiberfile.sys)
+4.Activer windows (entrer la clef)
+5.putty+firefox+noscript
+6.image disque: création d'un disque de réparation 
+7.systeme et sécurité/Sauvegarder et restaurer/Créer une image système. 
+8. Driver graphique
+9.services windows7 désactiver les inutiles (mais garder Netbios....)
+10.optimisation SSD sur les servces windows à nouveau
+11. activer AHCI (windows et BIOS)
+12.imdisk: un ramdisk, à lancer au démarrage
+13. installation du imdisk au startup, changement des temp (les 4) temp firefox:browser.cache.disk_cache_ssl=false
+14. optimiser winsxs
+15.pister les derniere ecriture disque 
+
+
+z.1. optionnels npp, 7z, vlc, clamwin, frostwire, treesize
+z.2. mapping sur 2nd disque: téléchargement (souvent lents et gros) documents (à priori idiot)
+
+URL
+http://www.pcastuces.com/pratique/windows/7/cloner_windows7/page4.htm
+http://www.pcastuces.com/pratique/windows/services_windows7/page4.htm
+http://www.pcastuces.com/pratique/windows/7/optimiser_ssd/page1.htm
+http://www.pcastuces.com/pratique/materiel/sata_ahci/page2.htm
+http://en.wikipedia.org/wiki/List_of_RAM_drive_software#Gavotte_RamDisk
+http://technet.microsoft.com/en-us/library/cc770556.aspx
+http://support.microsoft.com/kb/179365/fr
+http://www.perturbateur.com/faire-le-menage-dans-le-dossier-winsxs/
+http://helpdeskgeek.com/windows-7/windows-7-delete-hibernation-file-hiberfil-sys/
+
+NOTES
+>optim SSD
+    fsutil behavior set disablelastaccess 1
+services.msc
+windows search
+variables TEMP et TMP
+protection plus de restauration systeme)
+désactiver aussi prefetech et superfetch (regedit + services)
+services, en ligne de commande: net start: liste des erveice démarrés, (net stop "nom du service") stoppe le service.
+passage en manuel:
+sc config "service name" start=demand
+http://www.ltr-data.se/opencode.html/#ImDisk
+
+gpedit.msc :pour les startup
+ramdisk.bat:imdisk  -a -t vm -o fix -o hd -o rw -s 1G -m R: -p "/fs:ntfs /q /y" (executer en mode administrateur pour le formattage)
+$cmd pour désactiver l'hibernation
+powercfg –h off
+ou
+powercfg /HIBERNATE OFF
+
+
+
+Configuration des services: la liste
+http://stackoverflow.com/questions/13878921/how-to-get-all-windows-service-names-starting-with-a-common-word
+sous powerShell: GetServices
+
+
+optimiser winsxs: (qui enflen après l'sintall de SP1 sur W7)
+DISM /online /Cleanup-Image /SpSuperseded
+
+répertoire temp à vider
+C:\Windows\SoftwareDistribution\Download
+
+
+---citation pour winsxs
+Faire le ménage dans le dossier WinSXS
+8 réponses	
+
+Windows 7 a la fâcheuse tendance à laisser enfler le dossier C:\Windows\winsxs de ton PC. Surtout après l’installation du SP1. Ce répertoire WinSXS peut dépasser allégrement les 10 Go et même frôler les 20.
+
+Une simple commande te permettra de nettoyer les choses inutiles dans ce dernier:
+
+DISM /online /Cleanup-Image /SpSuperseded
+
+Attention, sur un disque standard, cela peut facilement prendre 10-15 minutes à faire. Sur un SSD, comptes 5 minutes tout de même selon la taille de ton dossier. J’ai effectué l’action sur de multiples postes, j’ai gagné minimum 3.5 Go à chaque fois. Cela vaut donc la peine d’attendre. Surtout niveau optimisation.
+---
+C:\Windows\system32>DISM /online /Cleanup-Image /SpSuperseded
+
+Outil Gestion et maintenance des images de déploiement
+Version : 6.1.7600.16385
+
+Version de l'image : 6.1.7600.16385
+
+Suppression des fichiers de sauvegarde créés durant l'installation du Service Pa
+ck.
+Suppression du package Microsoft-Windows-UltimateEdition~31bf3856ad364e35~amd64~
+~6.1.7600.16385
+[==========================100.0%==========================]
+L'opération de nettoyage du Service Pack est terminée.
+L'opération a réussi.
+----
